@@ -17,19 +17,22 @@ abstract class report
       {
           case 'csv' :
 
-              if (isset($this->data[0]))
-              {
+            //если в массиве есть данные, выполняет генерацию файла и отправляет его  
+            if (isset($this->data[0]))
+            {
                 $this->sendHeaders();
-                csv::onTheFly($this->data);
-              }else{
-                echo 'Нет записей';
-              }
 
-              break;
+                //выполняет генерацию csv файла на лету
+                csv::onTheFly($this->data);
+            }else{
+                echo 'Нет записей';
+            }
+
+            break;
 
           default:
-              echo 'На данный момент доступна выгрузка только в csv формат';
-              break;
+            echo 'На данный момент доступна выгрузка только в csv формат';
+            break;
       }
     }
 

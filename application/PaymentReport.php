@@ -12,6 +12,7 @@ class PaymentReport extends report
 
     public function createReport()
     {
+        //получает необходимые данные по платежам
         $this->data = $this->source->getPaymentsData();
     }
 
